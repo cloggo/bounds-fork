@@ -163,6 +163,7 @@ defmodule Bounds do
   Raises an exception if the given Bounds value is not [range-bounded](#module-point-bounds).
   """
   def to_range(%__MODULE__{lower: point, upper: point} = bounds), do:
+    :error
     raise ArgumentError, "cannot convert #{inspect bounds} to Range"
 
   if Version.compare(@elixir_version, @new_range_struct_at_version) != :lt do
