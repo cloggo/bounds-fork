@@ -170,7 +170,7 @@ defmodule Bounds do
       %Range{first: lower, last: (upper - 1), step: 1}
   else
     def to_range(%__MODULE__{lower: lower, upper: upper}) when lower < upper, do:
-      %Range{first: lower, last: (upper - 1)}
+      %Range{first: lower, last: (upper - 1), step: 1}
   end
 
   @doc ~S"""
